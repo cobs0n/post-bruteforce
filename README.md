@@ -7,7 +7,7 @@ Create a simple brute force against a post route using CLI.
 
 <img src="https://github.com/cobs0n/post-bruteforce/blob/main/sdawdawd.png"></img>
 
-You can install a precompiled version <a href="https://github.com/cobs0n/post-bruteforce/releases/tag/cbrute">here</a>, simply open commands prompts in the same directory as the exe and paste the command simillar to this, the first argument would be the username and the second argument would be the post route url. 
+You can install a precompiled version <a href="https://github.com/cobs0n/post-bruteforce/releases">here</a>, simply open commands prompts in the same directory as the exe and paste the command simillar to this, the first argument would be the username and the second argument would be the post route url. 
 
 ```
 CBRute.exe target https://example.com
