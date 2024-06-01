@@ -18,6 +18,7 @@ CBRute.exe target https://example.com
 
 If you would like to build from source, you'd first need to have a c++ compiler and curl installed. <a href="https://stackoverflow.com/questions/53861300/how-do-you-properly-install-libcurl-for-use-in-visual-studio-2017">Heres </a> a tutorial on how you can install curl. Afterwards just download the cbrute.cpp and build.
 
+To build using make, run ```make```
 
 # Donate
 
